@@ -1,28 +1,33 @@
 "~/.vimrc should be a link here or contain the following:
 "so ~/.unix_config/.vimrc
 
-" This has been checked on:
-" RHEL4     gvim TODO 
-" RHEL4      vim DONE
-" RHEL5     gvim DONE 
-" RHEL5      vim DONE
-" macvim    mvim TODO 
-" macvim     vim TODO
-" webfaction vim TODO
 
 
 
 " Set up the search path for plugins colors and syntax files
-set runtimepath=$HOME/dotfiles/vim,$VIMRUNTIME
+"set runtimepath=$HOME/dotfiles/vim,$VIMRUNTIME
+set runtimepath=$HOME/vimfiles,$VIMRUNTIME
 
-" Trying out Pathogen
-" https://github.com/tpope/vim-pathogen
-execute pathogen#infect()
+
+set nocompatible	   " Use Vim defaults instead of 100% vi compatibility
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/vimfiles/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " some things borrowed from
 "   http://code.charles-keepax.co.uk/mydotfiles/src/dbea2a3b27f71d572f2aaf9d95a24b8fc148fb63/_vimrc?at=default
 
-set nocompatible	   " Use Vim defaults instead of 100% vi compatibility
 set backspace=indent,eol,start	" more powerful backspacing
 set history=50          " keep 50 lines of command line history
 "set ruler               " show the cursor position all the time
