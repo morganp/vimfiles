@@ -8,7 +8,7 @@ set runtimepath=$HOME/vimfiles,$VIMRUNTIME
 
 
 set nocompatible	   " Use Vim defaults instead of 100% vi compatibility
-filetype off                  " required
+filetype off         " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/vimfiles/bundle/Vundle.vim
@@ -18,6 +18,9 @@ set rtp+=~/vimfiles/bundle/Vundle.vim
 "call vundle#rc(expand(vimDir . '/bundle'))
 
 call vundle#begin()
+" Run command below after adding new Plugins:
+":PluginInstall
+
 " Optional, pass a path where Vundle should install plugins
 call vundle#begin('~/vimfiles/bundle')
 
@@ -61,10 +64,10 @@ set showmode     " Display indication that insert mode is on
 set showcmd		   " Show (partial) command in status line.
 
 "Tab settings
-set expandtab           " spaces are used instead of tabs
-set tabstop=2           " number of spaces inserted when tab is hit
-set shiftwidth=2        " used with autoindent (should equal tabstop)
-set softtabstop=2       " if set below tabstop will insert this many spaces 
+set expandtab     " spaces are used instead of tabs
+set tabstop=2     " number of spaces inserted when tab is hit
+set shiftwidth=2  " used with autoindent (should equal tabstop)
+set softtabstop=2 " if set below tabstop will insert this many spaces 
 
 "Search settings
 set ignorecase		" Do case insensitive matching
