@@ -108,11 +108,11 @@ set wrap linebreak nolist
 " http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table 
 set formatoptions=l
 
-if version >= 604
-  "Allow cursor to go 1 character past end of line 
-  "for pasting at the end, I should use p instead of P
-  set virtualedit=onemore
-endif
+"if version >= 604
+"  "Allow cursor to go 1 character past end of line 
+"  "for pasting at the end, I should use p instead of P
+"  set virtualedit=onemore
+"endif
 
 " Setting the status line along the bottom
 set showcmd          " Always show command line in the status
@@ -294,8 +294,8 @@ imap  jj <Esc>
 
 " Enabling the Ruby Txt Object by nelstrom
 " Relies on other things
-filetype plugin on 
-runtime macros/matchit.vim
+"filetype plugin on 
+"runtime macros/matchit.vim
 
 
 "http://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/
