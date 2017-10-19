@@ -10,19 +10,29 @@ or adding as a submodule to you dotfiles repo.
     git submodule add https://github.com/morganp/vimfiles.git ~/dotfile/vimfiles
 
 
-Notes on Adding Plugins (Bundles)
+Install bundles with Vundler, from vim run:
+
+    :PluginInstall
+
+Add plugins using vundler syntax in the .vimrc
 --
 
-Add git submodule:
+    Plugin 'vim-airline/vim-airline'   
+
+
+
+Notes on Git and submodules
+--
+
+Add git submodules:
 
     git submodule add https://github.com/VundleVim/Vundle.vim.git ~/vimfiles/bundle/Vundle.vim
 
-List sub modules:
+List git submodules:
 
     git config --file .gitmodules --name-only --get-regexp path
 
-
-To remove a Submodule:
+Remove submodules:
 
     To remove a submodule you need to:
     Delete the relevant section from the .gitmodules file.
@@ -31,7 +41,7 @@ To remove a Submodule:
     Run git rm --cached path_to_submodule (no trailing slash).
     Run rm -rf .git/modules/path_to_submodule
 
-Add using vundler syntax
+
 
 
 [vundler]: https://github.com/VundleVim/Vundle.vim
