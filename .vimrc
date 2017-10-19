@@ -30,8 +30,24 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'   
 Plugin 'vim-airline/vim-airline-themes'
 
-" My custom Plugins
+" Fuzzy Finder
+Plugin 'junegunn/fzf.vim'
+
+" Pipes to check indentation
+Plugin 'Yggdroot/indentLine'
+
+" Ruby ?
+
+" HDL (Verilog) Language
+Plugin 'vhda/verilog_systemverilog.vim'
+" Async syntax checker
+Plugin 'w0rp/ale'
+
+" Matlab
+
+" My Custom Plugins
 Plugin 'morganp/vim-projector'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
