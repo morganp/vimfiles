@@ -36,6 +36,9 @@ Plugin 'junegunn/fzf.vim'
 " Pipes to check indentation
 Plugin 'Yggdroot/indentLine'
 
+" Perforce
+Plugin 'nfvs/vim-perforce'
+
 " Ruby ?
 
 " HDL (Verilog) Language
