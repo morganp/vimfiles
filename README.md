@@ -13,9 +13,14 @@ or adding as a submodule to you dotfiles repo.
 Notes on Adding Plugins (Bundles)
 --
 
-Add git submodule
+Add git submodule:
 
     git submodule add https://github.com/VundleVim/Vundle.vim.git ~/vimfiles/bundle/Vundle.vim
+
+List sub modules:
+
+    git config --file .gitmodules --name-only --get-regexp path
+
 
 To remove a Submodule:
 
@@ -30,3 +35,4 @@ Add using vundler syntax
 
 
 [vundler]: https://github.com/VundleVim/Vundle.vim
+

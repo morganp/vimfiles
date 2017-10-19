@@ -1,7 +1,5 @@
-"~/.vimrc should be a link here or contain the following:
+"~/.vimrc should ource or be a soft link to this
 "so ~/.unix_config/.vimrc
-
-
 
 
 " Set up the search path for plugins colors and syntax files
@@ -14,16 +12,31 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/vimfiles/bundle/Vundle.vim
+
+"let vimDir = '$HOME/vimfiles'
+"let &runtimepath .= ',' . expand(vimDir . '/bundle/Vundle.vim')
+"call vundle#rc(expand(vimDir . '/bundle'))
+
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Optional, pass a path where Vundle should install plugins
+call vundle#begin('~/vimfiles/bundle')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim' 
+
+Plugin 'vim-airline/vim-airline'   
+Plugin 'vim-airline/vim-airline-themes'
+
+" My custom Plugins
+Plugin 'morganp/vim-projector'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Enable vim-airline
+let g:airline#extensions#tabline#enabled = 1
+
 
 " some things borrowed from
 "   http://code.charles-keepax.co.uk/mydotfiles/src/dbea2a3b27f71d572f2aaf9d95a24b8fc148fb63/_vimrc?at=default
