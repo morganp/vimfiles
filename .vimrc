@@ -269,7 +269,9 @@ else
   " If we can not set filetype specific file indentation set generic
   set autoindent		
 endif " has("autocmd")
-
+ 
+"Change settings based on filetype
+au BufRead,BufNewFile *.v,*.rv,*.sv,*.svh,*.vh  set tabstop=3|set shiftwidth=3|set softtabstop=3|set filetype=verilog_systemverilog
 
 " Source a global configuration file if available
 "if filereadable("/etc/vimrc")
@@ -337,7 +339,8 @@ map ;g :call Preserve("normal! gg=G")<CR>
 "Setting up ':Clear' to clear search sstring
 :com! Clear let @/ = ""
 
-:com! StatsLine %s//\r/g 
+:com! StatsLine %s/
+/\r/g 
 
 " Aliasing :W to :w from 
 "   http://stackoverflow.com/questions/3878692/aliasing-a-command-in-vim
