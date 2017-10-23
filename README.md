@@ -26,7 +26,7 @@ Notes on Git and submodules
 
 Add git submodules:
 
-    git submodule add https://github.com/VundleVim/Vundle.vim.git ~/vimfiles/bundle/Vundle.vim
+    git submodule add https://github.com/VundleVim/Vundle.vim.git ./bundle/Vundle.vim
 
 List git submodules:
 
