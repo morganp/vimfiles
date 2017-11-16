@@ -39,6 +39,12 @@ Plugin 'Yggdroot/indentLine'
 " Perforce
 Plugin 'nfvs/vim-perforce'
 
+"White space plugin for tab higlighting
+Plugin 'ntpeters/vim-better-whitespace'
+" adds functions
+" :ToggleWhitespace
+" :StripWhitespace
+
 " Ruby ?
 
 " HDL (Verilog) Language
