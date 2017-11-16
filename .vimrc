@@ -25,9 +25,9 @@ call vundle#begin()
 call vundle#begin('~/vimfiles/bundle')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim' 
+Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'vim-airline/vim-airline'   
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 " Fuzzy Finder
@@ -95,13 +95,13 @@ set showcmd		   " Show (partial) command in status line.
 set expandtab     " spaces are used instead of tabs
 set tabstop=2     " number of spaces inserted when tab is hit
 set shiftwidth=2  " used with autoindent (should equal tabstop)
-set softtabstop=2 " if set below tabstop will insert this many spaces 
+set softtabstop=2 " if set below tabstop will insert this many spaces
 
 "Search settings
 set ignorecase		" Do case insensitive matching
 set smartcase     " If uppercase is used in search switch to case sensitive
 set incsearch	   	" Incremental search
- 
+
 " Auto
 set autowrite		  " Automatically save before commands like :next and :make
 
@@ -133,11 +133,11 @@ compiler ruby           " Enable compiler support for ruby
 set wrap linebreak nolist
 
 " Do not insert line returns in insert mode when going past textwidth.
-" http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table 
+" http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
 set formatoptions=l
 
 "if version >= 604
-"  "Allow cursor to go 1 character past end of line 
+"  "Allow cursor to go 1 character past end of line
 "  "for pasting at the end, I should use p instead of P
 "  set virtualedit=onemore
 "endif
@@ -165,13 +165,13 @@ if has("unix")
   if system("uname") == "Darwin"
     "Setting Mac Vim font size
     :set guifont=Menlo:h13
-  else 
+  else
     "Other Unix systems
     :set guifont=Monospace\ 12
     " set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
   endif
 endif
-" This was cauing issues in mvim with yank not working 
+" This was cauing issues in mvim with yank not working
 " Gvim on Redhat running inside VNC server accessed through OS X
 " Make CMD-C CMD-V Copy paste as Expected
 " First Step make terminal and Gvim listen to the same Copy/Paste command
@@ -227,7 +227,7 @@ elseif &t_Co >= 16
 elseif &t_Co >= 8
   "   8 Color Console
   colorscheme bw_white
-else  
+else
   " Console
   colorscheme bw_white
 end
@@ -239,11 +239,11 @@ so $HOME/dotfiles/dotfiles/.vimrc_spelling
 " For Projector Presentations
 "set background=light
 "highlight clear
-"colorscheme shine 
+"colorscheme shine
 
 if has("gui_running") || &t_Co >= 16
   "Warn with subtle background colours when over 80 chars long
-  highlight OverLength ctermbg=red ctermfg=white guibg=#592929 
+  highlight OverLength ctermbg=red ctermfg=white guibg=#592929
   match OverLength /\%81v.\+/
 end
 
@@ -252,18 +252,18 @@ end
 if has("autocmd")
   " Enable file type detection.
   filetype plugin indent on
-  
+
   " Group commands
   augroup filetype_verilog
     " Clear auto-commands
-    autocmd! 
+    autocmd!
 
     "autocmd BufNewFile,BufRead *.va,*.vams set ft=verilogams
   augroup END
 
   augroup remmeber_position_group
     " Clear auto-commands
-    autocmd! 
+    autocmd!
 
     " When editing a file, always jump to the last known cursor position.
     " Except when position is invalid or inside an event handler
@@ -276,7 +276,7 @@ if has("autocmd")
 
 else
   " If we can not set filetype specific file indentation set generic
-  set autoindent		
+  set autoindent
 endif " has("autocmd")
 
 
@@ -312,17 +312,17 @@ if has("unix")
   endif
 endif
 
-noremap <Up>     :echo 'Use k'<CR> 
-noremap <Down>   :echo 'Use j'<CR> 
-noremap <Left>   :echo 'Use h'<CR> 
-noremap <Right>  :echo 'Use l'<CR> 
+noremap <Up>     :echo 'Use k'<CR>
+noremap <Down>   :echo 'Use j'<CR>
+noremap <Left>   :echo 'Use h'<CR>
+noremap <Right>  :echo 'Use l'<CR>
 
 " type jk quickly instead of Escape to leave insert mode
 imap  jj <Esc>
 
 " Enabling the Ruby Txt Object by nelstrom
 " Relies on other things
-"filetype plugin on 
+"filetype plugin on
 "runtime macros/matchit.vim
 
 
@@ -346,31 +346,31 @@ map ;g :call Preserve("normal! gg=G")<CR>
 "Setting up ':Clear' to clear search sstring
 :com! Clear let @/ = ""
 
-:com! StatsLine %s//\r/g 
+:com! StatsLine %s//\r/g
 
-" Aliasing :W to :w from 
+" Aliasing :W to :w from
 "   http://stackoverflow.com/questions/3878692/aliasing-a-command-in-vim
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'w')?('W'):('w'))
 
-" Toggle fold state between closed and opened. 
-" 
-" If there is no fold at current line, just moves forward. 
-" If it is present, reverse it's state. 
-fun! ToggleFold() 
-  if foldlevel('.') == 0 
-    normal! l 
+" Toggle fold state between closed and opened.
+"
+" If there is no fold at current line, just moves forward.
+" If it is present, reverse it's state.
+fun! ToggleFold()
+  if foldlevel('.') == 0
+    normal! l
   else
-    if foldclosed('.') < 0 
-      . foldclose 
-    else 
-      . foldopen 
-    endif 
-  endif 
-  " Clear status line 
-  echo 
-endfun 
+    if foldclosed('.') < 0
+      . foldclose
+    else
+      . foldopen
+    endif
+  endif
+  " Clear status line
+  echo
+endfun
 
-" Map this function to Space key. 
+" Map this function to Space key.
 noremap <space> :call ToggleFold()<CR>
 
 " Turn on the fold column
