@@ -45,6 +45,9 @@ Plugin 'nfvs/vim-perforce'
 Plugin 'vhda/verilog_systemverilog.vim'
 " Async syntax checker
 Plugin 'w0rp/ale'
+let g:ale_sign_column_always = 1
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
 
 " Matlab
 
